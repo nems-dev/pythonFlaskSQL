@@ -31,11 +31,12 @@ def query_table(table):
     print(cursor.fetchall())
     conn.close()
 
-def insert_table(table, values):
-
-def update_table(table, value):
-
-def delete_table(table):
+def insert_table(table, columns, values):
+    cursor.execute("INSERT INTO {} ({}) VALUES ({})".format(table,columns,values))
+    conn.close()
+def update_table(table, values):
+    cursor.execute("UPDATE {}".format(table,values))
+def delete_table(table, ):
 
 if __name__ == '__main__':
     testdb = "testdatabase"
